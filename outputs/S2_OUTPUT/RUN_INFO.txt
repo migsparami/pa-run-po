@@ -1,0 +1,28 @@
+Notebook: S2fit-LSODA2-wide-fb.ipynb (extended model w/ substrate & product inhibition, LSODA)
+Run by: jibsreyes
+Date: 2026-08-26 ~14:05-14:31 PHT
+Runtime: 25.55 min (2000/2000 iterations, 300502 function evaluations)
+
+Result summary:
+  Best objective (RSS) = 0.310448
+  R^2:  X = 0.6796   S = 0.9272   P = 0.9824
+  RMSE: X = 0.5185   S = 2.2564   P = 0.4492
+  (Best fit of the three models so far -- all R^2 positive.)
+
+Estimated Parameters:
+  mu_m = 1.197556   Xm  = 2.878619   Ki  = 48.241250
+  Yxs  = 0.389969   Yps = 1.970370   m   = 0.035553
+  alpha= 0.043767    beta= 0.178600   Ksp = 169.474422
+  Kip  = 55.463886
+
+Known bug -- NOT re-run: this notebook errors on the last two cells
+("Create simulated dataset" and the .to_csv(...) call). Both still
+reference `t_sim` (the raw synthetic time grid) instead of `t_hat`
+(the grid actually returned by the two-segment solve_ivp calls,
+which is 1 element shorter). The plotting cell earlier in this same
+notebook already correctly uses `t_hat` -- this looks like the same
+fix just wasn't applied to the dataset-export cell too.
+
+Run with `--allow-errors` so the fit results/plots above (all cells
+through cell 13) are preserved despite the failure. No CSV was
+produced for this run as a result -- pending the upstream fix.

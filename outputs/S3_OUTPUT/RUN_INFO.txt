@@ -1,0 +1,18 @@
+Notebook: S3fit-wide.ipynb (Monod-kinetics variant)
+Run by: jibsreyes
+Date: 2026-08-26 ~13:47-13:54 PHT
+Runtime: 7.5 min (2000/2000 iterations, 150153 function evaluations)
+
+Result summary:
+  Best objective (RSS) = 4.209465
+  R^2:  X = -3.2509   S = -0.3487   P = 0.8976
+  RMSE: X = 1.8886     S = 9.7148    P = 1.0847
+
+Note: Ks and Yps converged to their upper bounds (100 and 10), and R^2
+for X and S are negative (worse than predicting the mean). The run
+completed without errors, but this suggests the model/bounds may not
+be a good fit for this dataset -- flagging for review, not a code issue.
+
+No CSV output: this notebook does not include a `to_csv(...)` export
+cell (unlike S1/S2), so only the executed notebook (with embedded
+plots/results) is saved here.

@@ -1,0 +1,28 @@
+Notebook: S1fit-wide-fb.ipynb (simplest model: logistic growth, linear product formation)
+Run by: jibsreyes
+Date: 2026-08-26 ~14:31-15:23 PHT
+Runtime: 51.53 min (2000/2000 iterations, 180202 function evaluations)
+
+Result summary:
+  Best objective (RSS) = 0.303835   <-- best of S1/S2/S3
+  R^2:  X = 0.6777   S = 0.9470   P = 0.9779
+  RMSE: X = 0.5200   S = 1.9250   P = 0.5038
+
+Estimated Parameters:
+  mu_m = 0.412516   Xm  = 2.884764   Yxs = 0.315427
+  qpm  = 0.014262   Pm  = 200.000000   Yps = 0.349696
+
+Note: Pm converged to its upper bound (200) -- similar bounds-
+saturation flag as seen in S3's run (Ks, Yps). Worth widening the
+Pm bound and re-checking if it converges to something lower, but
+the overall fit quality here is still good (all R^2 positive and
+high).
+
+Known bug -- NOT re-run: same as S2, this notebook errors on the
+last two cells ("Create simulated dataset" and .to_csv(...)), which
+still reference `t_sim` instead of `t_hat` (the corrected, correctly
+-sized time grid already used one cell earlier in the plotting code).
+
+Run with `--allow-errors` so the fit results/plots above (cells
+0-12) are preserved despite the failure. No CSV was produced for
+this run as a result -- pending the upstream fix.
